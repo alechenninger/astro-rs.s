@@ -7,21 +7,30 @@ import Episode from "../components/Episode.astro";
 
 <Layout title="runningsoftware.systems">
 	<!-- TODO: not sure about the background here -->
-	<div class="from-white to-slate-400 bg-gradient-to-r shadow-lg">
-		<Nav icon="👟" title="Running Software Systems"></Nav>
-		<Banner subtitle="A show about systems, software, running, and running software systems." 
-						blurb="Join us for real world conversations as the gang works through the trials and tribulations of building and maintaing sociotechnical software and teams.">
-		</Banner>
+	<div class="flex flex-col min-h-screen">
+		<div class="flex-none">
+			<div class="from-white to-slate-400 bg-gradient-to-r shadow-lg flex-none">
+				<Nav icon="👟" title="Running Software Systems"></Nav>
+				<Banner subtitle="A show about systems, software, running, and running software systems." 
+								blurb="Join us for real world conversations as the gang works through the trials and tribulations of building and maintaing sociotechnical software and teams.">
+				</Banner>
+			</div>
+			<h1 class="text-4xl text-center font-bold">Episodes</h1>
+			<Episode episode={2} 
+								title="The Quality Question" 
+								description={"In this episode Sneha wonders, \"How can I influence my team to think like a quality engineer?\" What does it mean to think like a QA, and how has Amy and Alec's beginnings as quality engineers shaped their perspective years later? The group discusses how quality relates to feedback loops, cognitive load, business context, architecture, leadership, and culture–ultimately concluding that quality is really a system-level outcome."}>
+			</Episode>
+			<Episode episode={1} 
+								title="Fresh Perspectives" 
+								description="Something something something something something something.">
+			</Episode>
+		</div>
+		<div class="flex-1"></div>
+		<!-- experimenting with footer -->
+		<!-- <div class="bg-slate-600 h-20 flex items-center">
+			<h2 class="m-auto text-lg text-slate-300">runningsoftware.systems</h2>
+		</div> -->
 	</div>
-	<h1 class="text-4xl text-center font-bold">Episodes</h1>
-	<Episode episode={2} 
-						title="The Quality Question" 
-						description={"In this episode Sneha wonders, \"How can I influence my team to think like a quality engineer?\" What does it mean to think like a QA, and how has Amy and Alec's beginnings as quality engineers shaped their perspective years later? The group discusses how quality relates to feedback loops, cognitive load, business context, architecture, leadership, and culture–ultimately concluding that quality is really a system-level outcome."}>
-	</Episode>
-	<Episode episode={1} 
-						title="Fresh Perspectives" 
-						description="Something something something something something something.">
-	</Episode>
 </Layout>
 <style>
 </style>
