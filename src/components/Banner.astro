@@ -9,10 +9,10 @@ const { subtitle, blurb } = Astro.props;
 <!-- Or 6xl and gap 10? -->
 <div class="py-12 px-24 mb-8 m-auto max-w-5xl flex gap-12">
   <div class="basis-3/5 pr-4">
-    <h2 class="text-5xl pb-4 font-semibold">{subtitle}</h2>
-    <p class="text-xl">{blurb}</p>
+    <h2 class="text-4xl pb-4 font-semibold">{subtitle}</h2>
+    <p class="text-lg">{blurb}</p>
   </div>
-  <div class="basis-2/5">
-    <img class="w-full" src={bannerImage}>
+  <div class="flex-1">
+    <img class="w-full drop-shadow" src={bannerImage}>
   </div>
 </div>
