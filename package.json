@@ -9,13 +9,13 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/react": "^0.2.1",
-    "@astrojs/tailwind": "^0.2.3",
-    "astro": "^1.0.0-beta.65",
+    "@astrojs/react": "^0.4.2",
+    "@astrojs/tailwind": "^0.2.5",
+    "astro": "^1.0.0-rc.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@astrojs/rss": "^0.2.1"
+    "@astrojs/rss": "^0.2.2"
   }
 }
