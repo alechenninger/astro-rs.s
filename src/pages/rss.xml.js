@@ -13,12 +13,7 @@ export async function get() {
       "content": "http://purl.org/rss/1.0/modules/content/",
     },
     description: 'A show about systems, software, running, and running software systems.',
-    // base URL for RSS <item> links
-    // SITE will use "site" from your project's astro.config.
     site: import.meta.env.SITE,
-    // list of `<item>`s in output xml
-    // simple example: generate items for every md file in /src/pages
-    // see "Generating items" section for required frontmatter and advanced use cases
     items: episodes.map((e, i) => {
       var number = i + 1;
       var path = `episodes/${number}.mp3`;
@@ -29,6 +24,7 @@ export async function get() {
         // so we should probably have per episode pages
         link: path,
         description: e.description,
+        // todo: pubDate
         customData: `
         <enclosure>
           <url>${new URL(path, import.meta.env.SITE)}</url>
