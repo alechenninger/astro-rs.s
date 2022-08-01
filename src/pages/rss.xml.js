@@ -1,4 +1,5 @@
 import rss from '@astrojs/rss';
+import episodes from '../assets/episodes.js';
 
 // todo: it would be nice to use localhost when using dev
 const image = new URL('/running-silhouttes.png', import.meta.env.SITE);
@@ -18,7 +19,27 @@ export async function get() {
     // list of `<item>`s in output xml
     // simple example: generate items for every md file in /src/pages
     // see "Generating items" section for required frontmatter and advanced use cases
-    items: import.meta.glob('./**/*.md'),
+    items: episodes.map((e, i) => {
+      var number = i + 1;
+      var path = `episodes/${number}.mp3`;
+      return {
+        title: e.title,
+        // todo: itunes uses as web page corresponding to episode
+        // and astro uses guid from link
+        // so we should probably have per episode pages
+        link: path,
+        description: e.description,
+        customData: `
+        <enclosure>
+          <url>${new URL(path, import.meta.env.SITE)}</url>
+          <length>${e.bytes}</length>
+          <type>${e.type}</type>
+        </enclosure>
+        <itunes:duration>${Math.round(e.seconds)}</itunes:duration>
+        <itunes:episode>${number}</itunes:episode>
+        `
+      }
+    }),
     // (optional) inject custom xml
     customData: `
     <language>en-us</language>
