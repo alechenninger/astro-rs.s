@@ -39,7 +39,6 @@ export async function get() {
     // (optional) inject custom xml
     customData: `
     <language>en-us</language>
-    <link>${import.meta.env.BASE_URL}</link>
     <itunes:author>${title}</itunes:author>
     <itunes:type></itunes:type>
     <itunes:owner>
