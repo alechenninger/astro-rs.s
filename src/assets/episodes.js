@@ -8,7 +8,7 @@ function date(day) {
 var episodes = [
   {
     title: 'Fresh Perspectives',
-    description: `Sneha is back at work after maturnity leave, so the gang discusses the surprising and necessary power of fresh perspectives. In this fascinating and genre-spanning discussion, they explore the "rut" that both people and organizations get themselves into, the science of predictive judgments, and the wisdom in seeking to develop the unique perspective of everyone in our teams, more than just our own.`,
+    description: `Sneha is back at work after maturnity leave, so the gang discusses the surprising and necessary power of fresh perspectives. This inaugural episode takes a mind-bending tour through the "rut" that both people and organizations get themselves into, the science of improving judgments at work, and the wisdom in seeking to develop the unique perspective of everyone in our teams, more than just our own.`,
     publishedDate: date('2022-10-01')
   },
   {
