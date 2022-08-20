@@ -29,7 +29,7 @@ export async function get() {
         // so we should probably have per episode pages
         link: path,
         description: e.description,
-        // todo: pubDate
+        pubDate: e.publishedDate,
         customData: `
         <enclosure>
           <url>${new URL(path, import.meta.env.SITE)}</url>
