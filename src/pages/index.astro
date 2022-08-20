@@ -3,6 +3,9 @@ import Nav from "../components/Nav.astro";
 import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import Episode from "../components/Episode.astro";
+
+import episodes from '../assets/episodes.js';
+
 ---
 <Layout title="runningsoftware.systems">
 	<!-- TODO: not sure about the background here -->
@@ -13,14 +16,10 @@ import Episode from "../components/Episode.astro";
 								blurb="Join us for real world conversations as the gang works through the trials and tribulations of building and maintaining sociotechnical software and teams."></Banner>
 			</Nav>
 			<h1 class="text-4xl text-center font-bold">Episodes</h1>
-			<Episode episode={2} 
-								title="The Quality Question" 
-								description={"In this episode Sneha wonders, \"How can I influence my team to think like a quality engineer?\" What does it mean to think like a QA, and how has Amy and Alec's beginnings as quality engineers shaped their perspective years later? The group discusses how quality relates to feedback loops, cognitive load, business context, architecture, leadership, and culture–ultimately concluding that quality is really a system-level outcome."}>
-			</Episode>
-			<Episode episode={1} 
-								title="Fresh Perspectives" 
-								description="Something something something something something something.">
-			</Episode>
+			{episodes.map((ep) => (
+				<Episode episode={ep.number} title={ep.title} description={ep.description}/>
+				)
+			)}
 		</div>
 		<div class="flex-1"></div>
 		<!-- experimenting with footer -->

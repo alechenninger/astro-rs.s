@@ -4,12 +4,12 @@ import mm from 'music-metadata';
 var episodes = [
   {
     title: 'Fresh Perspectives',
-    description: 'Test'
+    description: 'Something something something something something something.'
   },
-  // {
-  //   title: 'The Quality Question',
-  //   description: 'Test 2'
-  // }
+  {
+    title: 'The Quality Question',
+    description: `In this episode Sneha wonders, "How can I influence my team to think like a quality engineer?" What does it mean to think like a QA, and how has Amy and Alec's beginnings as quality engineers shaped their perspective years later? The group discusses how quality relates to feedback loops, cognitive load, business context, architecture, leadership, and culture–ultimately concluding that quality is really a system-level outcome.`
+  }
 ];
 
 // todo: put all metadata in mp3?
@@ -23,13 +23,19 @@ var episodes = [
 await (async () => {
   for (var i = 0; i < episodes.length; i++) {
     var ep = episodes[i];
-    var mp3 = `public/episodes/${i + 1}.mp3`;
-    var stats = fs.statSync(mp3);
-    var metadata = await mm.parseFile(mp3);
+    var number = i + 1;
+    ep.number = i + 1;
+
+    var mp3 = `public/episodes/${number}.mp3`;
+
+    if (fs.existsSync(mp3)) {
+      var stats = fs.statSync(mp3);
+      var metadata = await mm.parseFile(mp3);
   
-    ep.seconds = metadata.format.duration;
-    ep.bytes = stats.size;
-    ep.type = "audio/mpeg";
+      ep.seconds = metadata.format.duration;
+      ep.bytes = stats.size;
+      ep.type = "audio/mpeg";
+    }
   }
 })();
 

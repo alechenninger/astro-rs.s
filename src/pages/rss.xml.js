@@ -14,10 +14,15 @@ export async function get() {
     },
     description: 'A show about systems, software, running, and running software systems.',
     site: import.meta.env.SITE,
-    items: episodes.map((e, i) => {
+    items: episodes.flatMap((e, i) => {
       var number = i + 1;
       var path = `episodes/${number}.mp3`;
-      return {
+
+      if (!e.type) {
+        return [];
+      }
+    
+      return [{
         title: e.title,
         // todo: itunes uses as web page corresponding to episode
         // and astro uses guid from link
@@ -34,7 +39,7 @@ export async function get() {
         <itunes:duration>${Math.round(e.seconds)}</itunes:duration>
         <itunes:episode>${number}</itunes:episode>
         `
-      }
+      }];
     }),
     // (optional) inject custom xml
     customData: `
