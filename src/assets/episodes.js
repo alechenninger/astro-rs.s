@@ -4,11 +4,13 @@ import mm from 'music-metadata';
 var episodes = [
   {
     title: 'Fresh Perspectives',
-    description: 'Something something something something something something.'
+    description: 'Something something something something something something.',
+    publishedDate: new Date(2022, 10, 1)
   },
   {
     title: 'The Quality Question',
-    description: `In this episode Sneha wonders, "How can I influence my team to think like a quality engineer?" What does it mean to think like a QA, and how has Amy and Alec's beginnings as quality engineers shaped their perspective years later? The group discusses how quality relates to feedback loops, cognitive load, business context, architecture, leadership, and culture–ultimately concluding that quality is really a system-level outcome.`
+    description: `In this episode Sneha wonders, "How can I influence my team to think like a quality engineer?" What does it mean to think like a QA, and how has Amy and Alec's beginnings as quality engineers shaped their perspective years later? The group discusses how quality relates to feedback loops, cognitive load, business context, architecture, leadership, and culture–ultimately concluding that quality is really a system-level outcome.`,
+    publishedDate: new Date(2022, 11, 1)
   }
 ];
 
