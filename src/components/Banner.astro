@@ -7,7 +7,7 @@ export interface Props {
 const { subtitle, blurb } = Astro.props;
 ---
 <!-- Or 6xl and gap 10? -->
-<div class="py-12 px-24 mb-8 m-auto max-w-5xl flex gap-12">
+<div class="py-12 px-24 mb-8 m-auto max-w-5xl lg:flex gap-12">
   <div class="basis-3/5 pr-4">
     <h2 class="text-4xl pb-4 font-semibold">{subtitle}</h2>
     <p class="text-lg">{blurb}</p>
