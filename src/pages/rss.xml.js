@@ -27,6 +27,7 @@ export async function get() {
         // todo: itunes uses as web page corresponding to episode
         // and astro uses guid from link
         // so we should probably have per episode pages
+        // even if it just redirects to home page
         link: path,
         description: e.description,
         pubDate: e.publishedDate,
