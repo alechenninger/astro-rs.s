@@ -16,7 +16,7 @@ import episodes from '../assets/episodes.js';
 								blurb="Join us for real world conversations as the gang works through the trials and tribulations of building and maintaining sociotechnical software and teams."></Banner>
 			</Nav>
 			<h1 class="text-4xl text-center font-bold">Episodes</h1>
-			{episodes.reverse().map((ep) => (
+			{episodes.sort((a, b) => b.number - a.number).map((ep) => (
 				<Episode episode={ep.number} 
 								 title={ep.title} 
 								 description={ep.description}
