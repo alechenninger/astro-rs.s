@@ -8,12 +8,16 @@ function date(day) {
 var episodes = [
   {
     title: 'Fresh Perspectives',
-    description: `Sneha is back at work after maturnity leave, so the gang discusses the surprising and necessary power of fresh perspectives. This inaugural episode takes a mind-bending tour through the "rut" that both people and organizations get themselves into, the science of improving judgments at work, and the wisdom in seeking to develop the unique perspective of everyone in our teams, more than just our own.`,
+    description: `Sneha is back at work from maternity leave and wants to seize the opportunity her fresh perspective brings to her team. The gang explores the value of perspectives of all kinds–fresh ones, old ones, or (especially) competing ones–and how to better develop and integrate each for better judgments.`,
     publishedDate: date('2022-10-01')
   },
   {
     title: 'The Quality Question',
-    description: `In this episode Sneha wonders, "How can I influence my team to think like a quality engineer?" What does it mean to think like a QA, and how has Amy and Alec's beginnings as quality engineers shaped their perspective years later? The group discusses how quality relates to feedback loops, cognitive load, business context, architecture, leadership, and culture–ultimately concluding that quality is really a system-level outcome.`,
+    description: `Sneha wonders, "How can I influence my team to think like a 
+    quality engineer?" What does it mean to think like a QA, and how has Amy and Alec's beginnings 
+    as quality engineers shaped their perspective years later? The group discusses how quality 
+    relates to feedback loops, cognitive load, business context, architecture, leadership, and 
+    culture–ultimately concluding that quality is really a system-level outcome.`,
     publishedDate: date('2022-11-01')
   }
 ];
