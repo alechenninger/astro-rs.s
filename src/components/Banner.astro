@@ -12,7 +12,7 @@ const { subtitle, blurb } = Astro.props;
     <h2 class="text-4xl pb-4 font-semibold">{subtitle}</h2>
     <p class="text-lg">{blurb}</p>
   </div>
-  <div class="flex-1">
-    <img class="w-full drop-shadow" src={bannerImage}>
+  <div class="flex-1  object-cover ">
+    <img class="w-32 md:w-48 lg:w-64 drop-shadow" src={bannerImage}>
   </div>
 </div>
