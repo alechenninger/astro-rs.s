@@ -41,7 +41,7 @@ await (async () => {
     if (fs.existsSync(mp3)) {
       var stats = fs.statSync(mp3);
       var metadata = await mm.parseFile(mp3);
-  
+
       ep.seconds = metadata.format.duration;
       ep.bytes = stats.size;
       ep.type = "audio/mpeg";

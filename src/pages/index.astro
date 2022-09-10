@@ -4,26 +4,32 @@ import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import Episode from "../components/Episode.astro";
 
-import episodes from '../assets/episodes.js';
-
+import episodes from "../assets/episodes.js";
 ---
+
 <Layout title="runningsoftware.systems">
 	<!-- TODO: not sure about the background here -->
 	<div class="flex flex-col min-h-screen">
 		<div class="flex-none">
 			<Nav icon="👟" title="Running Software Systems">
-				<Banner subtitle="A show about systems, software, running, and running software systems." 
-								blurb="Join us for real world conversations as the gang works through the trials and tribulations of building and maintaining sociotechnical software and teams."></Banner>
+				<Banner
+					subtitle="A show about systems, software, running, and running software systems."
+					blurb="Join us for real world conversations as the gang works through the trials and tribulations of building and maintaining sociotechnical software and teams."
+				/>
 			</Nav>
 			<h1 class="text-3xl md:text-4xl text-center font-bold">Episodes</h1>
-			{episodes.sort((a, b) => b.number - a.number).map((ep) => (
-				<Episode episode={ep.number} 
-								 title={ep.title} 
-								 description={ep.description}
-								 date={ep.publishedDate}
-				/>
-				)
-			)}
+			{
+				episodes
+					.sort((a, b) => b.number - a.number)
+					.map((ep) => (
+						<Episode
+							episode={ep.number}
+							title={ep.title}
+							description={ep.description}
+							date={ep.publishedDate}
+						/>
+					))
+			}
 		</div>
 		<div class="flex-1"></div>
 		<!-- experimenting with footer -->
@@ -33,4 +39,5 @@ import episodes from '../assets/episodes.js';
 	</div>
 </Layout>
 <style>
+
 </style>

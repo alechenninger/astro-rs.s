@@ -5,7 +5,7 @@ import episodes from '../assets/episodes.js';
 const image = new URL('/running-silhouttes.png', import.meta.env.SITE);
 const title = 'Running Software Systems';
 
-export async function get() { 
+export async function get() {
   return rss({
     title: title,
     xmlns: {
@@ -21,7 +21,7 @@ export async function get() {
       if (!e.type) {
         return [];
       }
-    
+
       return [{
         title: e.title,
         // todo: itunes uses as web page corresponding to episode
@@ -55,5 +55,5 @@ export async function get() {
     <itunes:explicit>true</itunes:explicit>
     <itunes:image href="${image}"/>
     `,
-  }); 
+  });
 }
