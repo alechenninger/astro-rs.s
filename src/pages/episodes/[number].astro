@@ -1,0 +1,34 @@
+---
+import Nav from "../../components/Nav.astro";
+import Layout from "../../layouts/Layout.astro";
+import Episode from "../../components/Episode.astro";
+
+import episodes from "../../assets/episodes.js";
+
+export function getStaticPaths() {
+  return episodes.map((ep) => {
+    return {
+      params: {
+        number: ep.number.toString(),
+      },
+    };
+  });
+}
+
+const { number } = Astro.params;
+
+var episode = episodes[Number(number) - 1];
+---
+
+<Layout title="runningsoftware.systems">
+  <Nav icon="👟" title="Running Software Systems" />
+</Layout>
+<Episode
+  episode={episode.number}
+  title={episode.title}
+  description={episode.description}
+  date={episode.publishedDate}
+/>
+<style>
+
+</style>

@@ -14,8 +14,8 @@ export async function get() {
     },
     description: 'A show about systems, software, running, and running software systems.',
     site: import.meta.env.SITE,
-    items: episodes.flatMap((e, i) => {
-      var number = i + 1;
+    items: episodes.flatMap((e) => {
+      var number = e.number;
       var path = `episodes/${number}.mp3`;
 
       if (!e.type) {
@@ -24,11 +24,9 @@ export async function get() {
 
       return [{
         title: e.title,
-        // todo: itunes uses as web page corresponding to episode
-        // and astro uses guid from link
-        // so we should probably have per episode pages
-        // even if it just redirects to home page
-        link: path,
+        // note: itunes uses link as web page corresponding to episode
+        // and astro uses link as guid
+        link: `episodes/${number}`,
         description: e.description,
         pubDate: e.publishedDate,
         customData: `

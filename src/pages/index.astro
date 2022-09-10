@@ -20,6 +20,7 @@ import episodes from "../assets/episodes.js";
 			<h1 class="text-3xl md:text-4xl text-center font-bold">Episodes</h1>
 			{
 				episodes
+					.slice()
 					.sort((a, b) => b.number - a.number)
 					.map((ep) => (
 						<Episode
