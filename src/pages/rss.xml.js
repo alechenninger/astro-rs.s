@@ -2,7 +2,7 @@ import rss from '@astrojs/rss';
 import episodes from '../assets/episodes.js';
 
 // todo: it would be nice to use localhost when using dev
-const image = new URL('/running-silhouttes.png', import.meta.env.SITE);
+const image = new URL('/running-silhouettes.png', import.meta.env.SITE);
 const title = 'Running Software Systems';
 
 export async function get() {
