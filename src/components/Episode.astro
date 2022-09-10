@@ -10,13 +10,13 @@ const { episode, title, description, date } = Astro.props as Props;
 ---
 
 <div
-  class="flex md:max-w-4xl mx-auto p-2 m-2 md:p-4 md:m-8 md:gap-4 lg:p-4 lg:m-8 lg:gap-4 bg-gray-50 rounded-xl shadow-lg"
+  class="flex md:max-w-6xl p-2 m-2 md:p-4 md:m-8 md:gap-4 lg:p-4 lg:m-8 lg:gap-4 bg-gray-50 rounded-xl shadow-lg"
 >
-  <!--div class="flex flex-col items-stretch px-6">
-    <img class="flex-none" src={icon}>
+  <div class="hidden md:flex flex-col items-stretch px-6">
+    <img class="flex-none" src={icon} />
     <div class="flex-1"></div>
     <button class="flex-none p-2">Listen</button>
-  </div-->
+  </div>
   <!--TODO: Add image and play icon on the left for md/lg screens; Remove image and place play icon inline with episode title and date-->
   <div class="pt-3 pb-3 pl-3 pr-3">
     <div class="flex font-semibold">
