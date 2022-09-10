@@ -1,5 +1,6 @@
 ---
 import ListenMenu from "./ListenMenu.astro";
+import twitterIcon from '../assets/twitter-icon.png'
 export interface Props {
 	icon: string;
 	title: string;
@@ -19,7 +20,10 @@ const { title, icon } = Astro.props;
 					<!-- Primary Navbar items -->
 						<div class="flex items-center space-x-1 m-auto flex-none ">
 							<ListenMenu></ListenMenu>
-							<a href="https://twitter.com/runningsoftware?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @runningsoftware</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+							<a href="https://twitter.com/runningsoftware?ref_src=twsrc%5Etfw" target="_blank">
+								<img class="w-4 md:w-6 lg:w-8 drop-shadow" src={twitterIcon} />
+							   </a>
+							<!--a href="https://twitter.com/runningsoftware?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @runningsoftware</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script-->
 						</div>
 				</div>
 			</div>
