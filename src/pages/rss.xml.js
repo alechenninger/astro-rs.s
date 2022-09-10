@@ -15,9 +15,6 @@ export async function get() {
     description: 'A show about systems, software, running, and running software systems.',
     site: import.meta.env.SITE,
     items: episodes.flatMap((e) => {
-      var number = e.number;
-      var path = `episodes/${number}.mp3`;
-
       if (!e.type) {
         return [];
       }
@@ -26,17 +23,17 @@ export async function get() {
         title: e.title,
         // note: itunes uses link as web page corresponding to episode
         // and astro uses link as guid
-        link: `episodes/${number}`,
+        link: `${new URL(`episodes/${e.number}`, import.meta.env.SITE)}`,
         description: e.description,
         pubDate: e.publishedDate,
         customData: `
         <enclosure>
-          <url>${new URL(path, import.meta.env.SITE)}</url>
+          <url>${new URL(`episodes/${e.number}.mp3`, import.meta.env.SITE)}</url>
           <length>${e.bytes}</length>
           <type>${e.type}</type>
         </enclosure>
         <itunes:duration>${Math.round(e.seconds)}</itunes:duration>
-        <itunes:episode>${number}</itunes:episode>
+        <itunes:episode>${e.number}</itunes:episode>
         `
       }];
     }),
