@@ -22,13 +22,13 @@ var episode = episodes[Number(number) - 1];
 
 <Layout title="runningsoftware.systems">
   <Nav icon="👟" title="Running Software Systems" />
+  <Episode
+    episode={episode.number}
+    title={episode.title}
+    description={episode.description}
+    date={episode.publishedDate}
+  />
 </Layout>
-<Episode
-  episode={episode.number}
-  title={episode.title}
-  description={episode.description}
-  date={episode.publishedDate}
-/>
 <style>
 
 </style>
